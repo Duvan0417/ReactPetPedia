@@ -1,0 +1,25 @@
+/* Estilos para el pie de página */
+  footer {
+    background: var(--dark-color); /* Color de fondo del pie de página */
+    color: var(--light-color); /* Color del texto del pie de página */
+    padding: 3rem 0; /* Espaciado interno */
+    margin-left: 70px; /* Margen izquierdo */
+  }
+  
+  .social-links {
+    display: flex; /* Usa flexbox para organizar los enlaces sociales */
+    justify-content: center; /* Centra los enlaces */
+    gap: 1.5rem; /* Espacio entre los enlaces */
+    margin-top: 1.5rem; /* Margen superior */
+  }
+  
+  .social-icon {
+    color: var(--light-color); /* Color de los iconos sociales */
+    font-size: 1.5rem; /* Tamaño de los iconos */
+    transition: all 0.3s ease; /* Transición suave para todos los cambios */
+  }
+  
+  .social-icon:hover {
+    color: var(--accent-color); /* Color de los iconos al pasar el mouse */
+    transform: translateY(-3px); /* Eleva el icono al pasar el mouse */
+  }

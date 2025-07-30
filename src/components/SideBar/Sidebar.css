@@ -1,0 +1,48 @@
+  /* Estilos para la barra lateral */
+  .sidebar {
+    position: fixed; /* Fija la barra lateral en la pantalla */
+    top: 0; /* Posición en la parte superior */
+    left: 0; /* Posición a la izquierda */
+    width: 70px; /* Ancho inicial de la barra lateral */
+    height: 100%; /* Altura completa */
+    background: var(--dark-color); /* Color de fondo de la barra lateral */
+    transition: width 0.3s ease; /* Transición suave para el cambio de ancho */
+    overflow-x: hidden; /* Oculta el desbordamiento horizontal */
+    z-index: 1000; /* Asegura que la barra lateral esté por encima de otros elementos */
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1); /* Sombra para darle profundidad */
+  }
+  
+  .sidebar a {
+    display: flex; /* Usa flexbox para alinear los elementos */
+    align-items: center; /* Centra verticalmente los elementos */
+    padding: 15px 20px; /* Espaciado interno */
+    color: var(--light-color); /* Color del texto */
+    text-decoration: none; /* Elimina el subrayado del texto */
+    transition: all 0.3s ease; /* Transición suave para todos los cambios */
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+  }
+  
+  .sidebar a:hover {
+    background: var(--primary-color); /* Color de fondo al pasar el mouse */
+    color: white; /* Cambia el color del texto al pasar el mouse */
+  }
+  
+  .sidebar a i {
+    font-size: 1.5rem; /* Tamaño de los iconos */
+    min-width: 30px; /* Ancho mínimo para los iconos */
+  }
+  
+  .sidebar a span {
+    opacity: 0; /* Inicialmente oculto */
+    transition: opacity 0.2s ease; /* Transición suave para la opacidad */
+    margin-left: 10px; /* Espacio a la izquierda del texto */
+  }
+  
+  .sidebar:hover {
+    width: 240px; /* Ancho expandido al pasar el mouse */
+  }
+  
+  .sidebar:hover a span {
+    opacity: 1; /* Muestra el texto al pasar el mouse */
+  }
+  
