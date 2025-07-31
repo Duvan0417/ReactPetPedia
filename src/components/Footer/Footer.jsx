@@ -1,64 +1,97 @@
 import React from 'react';
-import { Github, Twitter, Linkedin, Mail } from 'lucide-react';
-import "../Footer/Footer.css"; // Assuming you have a CSS file for styling
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
+  /*const exploreLinks = [
+    { path: '/inicio", text: 'Inicio' },
+    { path: '/tienda", text: 'Tienda' },
+    { path: '/veterinaria", text: 'Veterinaria' },
+    { path: '/adopcion", text: 'Adopciones' }
+  ];
+
+  const supportLinks = [
+    { path: '/ayuda", text: 'Centro de ayuda' },
+    { path: '/contacto", text: 'Contacto' },
+    { path: '/faq", text: 'FAQ' },
+    { path: '/blog", text: 'Blog' }
+  ];
+
+  const policyLinks = [
+    { path: '/terminos", text: 'Términos de uso' },
+    { path: '/privacidad", text: 'Política de privacidad' },
+    { path: '/cookies", text: 'Cookies' }
+  ];
+
+  const socialIcons = [
+    { icon: 'fab fa-facebook-f', url: '#' },
+    { icon: 'fab fa-twitter', url: '#' },
+    { icon: 'fab fa-instagram', url: '#' },
+    { icon: 'fab fa-youtube', url: '#' }
+  ];*/
+
   return (
-    <footer className="bg-gray-900 text-white py-8">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Sección de la empresa */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Mi App</h3>
-            <p className="text-gray-400 text-sm">
-              Creando experiencias digitales increíbles para usuarios de todo el mundo.
-            </p>
+    <footer className="footer">
+      <div className="container">
+        <div className="row">
+          <div className="col-md-4">
+            <h5>PetPedia</h5>
+            <p>Tu plataforma integral para el cuidado y bienestar de tus mascotas.</p>
+            <div className="social-icons">
+              {socialIcons.map((social, index) => (
+                <a 
+                  href={social.url} 
+                  key={index}
+                  aria-label={`${social.icon.split('-')[1]} social link`}
+                >
+                  <i className={social.icon}></i>
+                </a>
+              ))}
+            </div>
           </div>
           
-          {/* Enlaces rápidos */}
-          <div>
-            <h4 className="text-md font-semibold mb-4">Enlaces Rápidos</h4>
-            <ul className="space-y-2 text-sm">
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Inicio</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Sobre Nosotros</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Servicios</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Contacto</a></li>
+          <div className="col-md-2">
+            <h5>Explorar</h5>
+            <ul className="footer-links">
+              {exploreLinks.map((link, index) => (
+                <li key={index}>
+                  <Link to={link.path}>{link.text}</Link>
+                </li>
+              ))}
             </ul>
           </div>
           
-          {/* Soporte */}
-          <div>
-            <h4 className="text-md font-semibold mb-4">Soporte</h4>
-            <ul className="space-y-2 text-sm">
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Centro de Ayuda</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Términos de Uso</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Política de Privacidad</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
+          <div className="col-md-2">
+            <h5>Soporte</h5>
+            <ul className="footer-links">
+              {supportLinks.map((link, index) => (
+                <li key={index}>
+                  <Link to={link.path}>{link.text}</Link>
+                </li>
+              ))}
             </ul>
           </div>
           
-          {/* Redes sociales */}
-          <div>
-            <h4 className="text-md font-semibold mb-4">Síguenos</h4>
-            <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Github size={20} />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Twitter size={20} />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Linkedin size={20} />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Mail size={20} />
-              </a>
+          <div className="col-md-4">
+            <h5>Suscríbete a nuestro boletín</h5>
+            <p>Mantente al día con las últimas noticias y consejos para tus mascotas.</p>
+            <div className="footer-newsletter">
+              <input type="email" placeholder="Tu email" />
+              <button type="submit" aria-label="Suscribirse">
+                <i className="fas fa-paper-plane"></i>
+              </button>
             </div>
           </div>
         </div>
         
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
-          <p>&copy; 2025 Mi App. Todos los derechos reservados.</p>
+        <div className="copyright">
+          <p>&copy; 2025 PetPedia. Todos los derechos reservados.</p>
+          <ul className="policy-links">
+            {policyLinks.map((link, index) => (
+              <li key={index}>
+                <Link to={link.path}>{link.text}</Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </footer>

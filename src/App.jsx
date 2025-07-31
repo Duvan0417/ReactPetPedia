@@ -1,23 +1,20 @@
 import React from 'react';
-import Sidebar from '../src/components/SideBar/SideBar';
-import Veterinaria from './components/Veterinaria/Veterinaria';
-import Footer from './components/Footer/Footer';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Compra from './Pages/Compra/Compra';
+import Inicio from './Pages/Home/Inicio';
 
-const App = () => {
+
+function App() {
   return (
-    <div className="min-h-screen bg-gray-100">
-      <div className="flex">
-        {/* Sidebar */}
-        <Sidebar />
-        
-        {/* Main Content Area */}
-        <div className="flex-1 flex flex-col">
-          <Veterinaria />
-          <Footer />
-        </div>
-      </div>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/compra" element={<Compra />} />
+        <Route path="/inicio" element={<Inicio />} />
+        <Route path="/carritocompra" element={<Carrito />} />
+        <Route path="/" element={<Inicio />} />
+      </Routes>
+    </Router>
   );
-};
+}
 
 export default App;

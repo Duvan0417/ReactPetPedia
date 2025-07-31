@@ -1,49 +1,38 @@
 import React from 'react';
-import { Home, User, Settings, BookOpen, MessageCircle, LogOut } from 'lucide-react';
-import "../SideBar/Sidebar.css"; // Assuming you have a CSS file for styling
+import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
+  const menuItems = [
+    { path: '/inicio', icon: 'fas fa-home', name: 'Inicio' },
+    { path: '/compra', icon: 'fas fa-shopping-cart', name: 'Compra' },
+    { path: '/veterinaria', icon: 'fas fa-clinic-medical', name: 'Veterinaria' },
+    { path: '/adopcion', icon: 'fas fa-paw', name: 'Adopciones' },
+    { path: '/foro', icon: 'fas fa-comments', name: 'Foro' },
+    { path: '/perfil', icon: 'fas fa-user', name: 'Perfil' },
+    { path: '/ajustes', icon: 'fas fa-cog', name: 'Configuración' }
+  ];
+
   return (
-    <div className="w-64 bg-gray-900 text-white min-h-screen p-4">
-      <div className="mb-8">
-        <h2 className="text-xl font-bold text-center">Mi App</h2>
+    <div className="sidebar">
+      <div className="sidebar-header">
+        <img src="/api/placeholder/80/80" alt="Logo de PetPedia" className="logo" />
+        <span className="logo-text">PetPedia</span>
       </div>
-      
-      <nav className="space-y-2">
-        <a href="#" className="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-800 transition-colors">
-          <Home size={20} />
-          <span>Inicio</span>
-        </a>
-        
-        <a href="#" className="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-800 transition-colors">
-          <User size={20} />
-          <span>Perfil</span>
-        </a>
-        
-        <a href="#" className="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-800 transition-colors">
-          <BookOpen size={20} />
-          <span>Proyectos</span>
-        </a>
-        
-        <a href="#" className="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-800 transition-colors">
-          <MessageCircle size={20} />
-          <span>Mensajes</span>
-        </a>
-        
-        <a href="#" className="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-800 transition-colors">
-          <Settings size={20} />
-          <span>Configuración</span>
-        </a>
-      </nav>
-      
-      <div className="mt-auto pt-8">
-        <a href="#" className="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-800 transition-colors text-red-400">
-          <LogOut size={20} />
-          <span>Cerrar Sesión</span>
-        </a>
+      <div className="sidebar-menu">
+        {menuItems.map((item, index) => (
+          <Link 
+            to={item.path} 
+            className={`menu-item ${window.location.pathname === item.path ? 'active' : ''}`}
+            key={index}
+            aria-label={item.name}
+          >
+            <i className={item.icon}></i>
+            <span>{item.name}</span>
+          </Link>
+        ))}
       </div>
     </div>
   );
 };
 
-export default Sidebar;
+export default Sidebar; 
