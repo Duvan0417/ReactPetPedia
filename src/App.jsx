@@ -3,6 +3,9 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Sidebar from './components/SideBar/SideBar';
 import Compra from './Pages/Compra/Compra';
 import Inicio from './Pages/Home/Inicio';
+import Configuracion from './Pages/Configuracion/Configuracion';
+import './App.css';
+
 
 function App() {
   return (
@@ -14,6 +17,8 @@ function App() {
           <Route path="/" element={<Navigate to="/inicio" />} />
           <Route path="/inicio" element={<Inicio />} />
           <Route path="/compra" element={<Compra />} />
+          <Route path="/ajustes" element={<Configuracion />} />
+
           <Route path="*" element={<div>Página no encontrada</div>} />
         </Routes>
       </div>
