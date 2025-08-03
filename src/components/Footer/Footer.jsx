@@ -2,24 +2,24 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
-  /*const exploreLinks = [
-    { path: '/inicio", text: 'Inicio' },
-    { path: '/tienda", text: 'Tienda' },
-    { path: '/veterinaria", text: 'Veterinaria' },
-    { path: '/adopcion", text: 'Adopciones' }
+  const exploreLinks = [
+    { path: '/inicio', text: 'Inicio' },
+    { path: '/tienda', text: 'Tienda' },
+    { path: '/veterinaria', text: 'Veterinaria' },
+    { path: '/adopcion', text: 'Adopciones' }
   ];
 
   const supportLinks = [
-    { path: '/ayuda", text: 'Centro de ayuda' },
-    { path: '/contacto", text: 'Contacto' },
-    { path: '/faq", text: 'FAQ' },
-    { path: '/blog", text: 'Blog' }
+    { path: '/ayuda', text: 'Centro de ayuda' },
+    { path: '/contacto', text: 'Contacto' },
+    { path: '/faq', text: 'FAQ' },
+    { path: '/blog', text: 'Blog' }
   ];
 
   const policyLinks = [
-    { path: '/terminos", text: 'Términos de uso' },
-    { path: '/privacidad", text: 'Política de privacidad' },
-    { path: '/cookies", text: 'Cookies' }
+    { path: '/terminos', text: 'Términos de uso' },
+    { path: '/privacidad', text: 'Política de privacidad' },
+    { path: '/cookies', text: 'Cookies' }
   ];
 
   const socialIcons = [
@@ -27,7 +27,7 @@ const Footer = () => {
     { icon: 'fab fa-twitter', url: '#' },
     { icon: 'fab fa-instagram', url: '#' },
     { icon: 'fab fa-youtube', url: '#' }
-  ];*/
+  ];
 
   return (
     <footer className="footer">

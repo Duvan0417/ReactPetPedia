@@ -1,7 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Sidebar = () => {
+  const location = useLocation();
+  
   const menuItems = [
     { path: '/inicio', icon: 'fas fa-home', name: 'Inicio' },
     { path: '/compra', icon: 'fas fa-shopping-cart', name: 'Compra' },
@@ -22,7 +24,7 @@ const Sidebar = () => {
         {menuItems.map((item, index) => (
           <Link 
             to={item.path} 
-            className={`menu-item ${window.location.pathname === item.path ? 'active' : ''}`}
+            className={`menu-item ${location.pathname === item.path ? 'active' : ''}`}
             key={index}
             aria-label={item.name}
           >
@@ -35,4 +37,4 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar; 
+export default Sidebar;

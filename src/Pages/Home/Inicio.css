@@ -1,11 +1,16 @@
-:root {
-  --primary-color: #4A6FA5;
-  --secondary-color: #6FB3B8;
-  --accent-color: #FF6B6B;
+:root { 
+  --primary-color: #2d3ac4; /* Azul oscuro principal */
+  --secondary-color: #2d6dc1; /* Azul intermedio */
+  --accent-color: #e28a1f; /* Naranja un poco más suave */
+  --color-icon: #7b3fcf; /* Morado para íconos */
   --light-color: #F0F7F4;
   --dark-color: #2C3E50;
+  --purple-color1: #6a4cf5; /* Morado uniforme */
+  --purple-color2: #36d9c4;
+  --gradient-color1: linear-gradient(135deg, var(--purple-color1) 0%, var(--purple-color2) 100%);
   --gradient-bg: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
 }
+
 
 body {
   font-family: 'Nunito', sans-serif;
@@ -22,13 +27,15 @@ body {
   left: 0;
   width: 80px;
   height: 100%;
-  background: var(--dark-color);
+  background: #3653d5;
   transition: width 0.3s ease;
   overflow-x: hidden;
   z-index: 1000;
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
+    border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
 .sidebar:hover {
@@ -116,8 +123,8 @@ body {
 
 .banner {
   height: 500px;
-  background-image: url('/api/placeholder/1200/500');
-  background-size: cover;
+  background: var(--gradient-color1);
+  background-size: cover; 
   background-position: center;
   position: relative;
   overflow: hidden;
@@ -202,7 +209,7 @@ body {
 
 .feature-icon {
   font-size: 3rem;
-  color: var(--accent-color);
+  color: var(--color-icon);
   margin-bottom: 25px;
   background: rgba(255, 107, 107, 0.1);
   width: 100px;

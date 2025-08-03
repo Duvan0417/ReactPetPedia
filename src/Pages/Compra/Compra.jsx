@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Sidebar from '../../components/SideBar/SideBar'; // Ajusta según tu estructura real
 import Navbar from '../../components/Navbar/Navbar';
 import ProductCard from '../../components/ProductCard/ProductCard';
-import PromoBanner from '../../components/PromoBanner7/PromoBanner';
+import PromoBanner from '../../components/PromoBanner/PromoBanner';
 import Footer from '../../components/Footer/Footer';
 import { productsData } from '../../data/products'; // Asegúrate que esta ruta también sea correcta
 import 'bootstrap/dist/css/bootstrap.min.css';
