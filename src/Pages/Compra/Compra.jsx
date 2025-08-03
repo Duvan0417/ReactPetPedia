@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import Sidebar from '../../components/SideBar/SideBar'; // Ajusta según tu estructura real
+import { productsData } from '../../data/products';
+import Sidebar from '../../components/SideBar/SideBar';
 import Navbar from '../../components/Navbar/Navbar';
-import ProductCard from '../../components/ProductCard/ProductCard';
 import PromoBanner from '../../components/PromoBanner/PromoBanner';
+import ProductCard from '../../components/ProductCard/ProductCard';
 import Footer from '../../components/Footer/Footer';
-import { productsData } from '../../data/products'; // Asegúrate que esta ruta también sea correcta
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import './compra.css';
