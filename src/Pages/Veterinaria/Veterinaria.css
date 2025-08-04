@@ -102,11 +102,15 @@ button {
 
 /* LAYOUT PRINCIPAL */
 .main-content {
-  margin-left: var(--sidebar-width);
+  margin-left: 0; /* Por defecto, sin margen */
   min-height: 100vh;
   transition: var(--transition-normal);
   background-color: #f8f9fa;
   position: relative;
+}
+
+.sidebar-visible .main-content {
+  margin-left: var(--sidebar-width); /* Solo si el Sidebar está visible */
 }
 
 /* SIDEBAR */

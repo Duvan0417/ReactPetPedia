@@ -3,9 +3,9 @@
     position: fixed; /* Fija la barra lateral en la pantalla */
     top: 0; /* Posición en la parte superior */
     left: 0; /* Posición a la izquierda */
-    width: 70px; /* Ancho inicial de la barra lateral */
+    width: 80px; /* Ancho inicial de la barra lateral */
     height: 100%; /* Altura completa */
-    background: #4937c3; /* Color de fondo de la barra lateral */
+    background: #2848c7; /* Color de fondo de la barra lateral */
     transition: width 0.3s ease; /* Transición suave para el cambio de ancho */
     overflow-x: hidden; /* Oculta el desbordamiento horizontal */
     z-index: 1000; /* Asegura que la barra lateral esté por encima de otros elementos */
@@ -23,7 +23,7 @@
   }
   
   .sidebar a:hover {
-    background: var(--primary-color); /* Color de fondo al pasar el mouse */
+    background: #203899; /* Color de fondo al pasar el mouse */
     color: white; /* Cambia el color del texto al pasar el mouse */
   }
   
