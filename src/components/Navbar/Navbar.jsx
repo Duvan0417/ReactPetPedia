@@ -1,19 +1,22 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faThLarge, faPercent, faStar, faShippingFast, faSearch, faShoppingCart, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import './Navbar.css';
 
 const Navbar = ({ cartItemsCount, onSearch }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
 
   const categories = [
-    { name: 'Alimentos', icon: 'fas fa-drumstick-bite' },
-    { name: 'Juguetes', icon: 'fas fa-bone' },
-    { name: 'Ropa y Accesorios', icon: 'fas fa-tshirt' },
-    { name: 'Camas y Muebles', icon: 'fas fa-bed' },
-    { name: 'Higiene y Cuidado', icon: 'fas fa-shower' },
-    { name: 'Salud y Bienestar', icon: 'fas fa-pills' },
-    { name: 'Viajes y Transporte', icon: 'fas fa-suitcase' },
-    { name: 'Entrenamiento', icon: 'fas fa-graduation-cap' }
+    { name: 'Alimentos', icon: faEnvelope },
+    { name: 'Juguetes', icon: faThLarge },
+    { name: 'Ropa y Accesorios', icon: faPercent },
+    { name: 'Camas y Muebles', icon: faStar },
+    { name: 'Higiene y Cuidado', icon: faShippingFast },
+    { name: 'Salud y Bienestar', icon: faSearch },
+    { name: 'Viajes y Transporte', icon: faShoppingCart },
+    { name: 'Entrenamiento', icon: faBars }
   ];
 
   const handleSearch = (e) => {
@@ -24,7 +27,7 @@ const Navbar = ({ cartItemsCount, onSearch }) => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light">
       <button className="toggle-sidebar mr-3" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-        <i className="fas fa-bars"></i>
+        <FontAwesomeIcon icon={faBars} />
       </button>
       
       <Link className="navbar-brand" to="/inicio">
@@ -50,29 +53,29 @@ const Navbar = ({ cartItemsCount, onSearch }) => {
               aria-haspopup="true" 
               aria-expanded="false"
             >
-              <i className="fas fa-th-large mr-2"></i>Categorías
+              <FontAwesomeIcon icon={faThLarge} className="mr-2" />Categorías
             </button>
             <div className="dropdown-menu" aria-labelledby="navbarDropdown">
               {categories.map((category, index) => (
                 <Link className="dropdown-item" to="#" key={index}>
-                  <i className={`${category.icon} mr-2`}></i>{category.name}
+                  <FontAwesomeIcon icon={category.icon} className="mr-2" />{category.name}
                 </Link>
               ))}
             </div>
           </li>
           <li className="nav-item">
             <Link className="nav-link" to="#">
-              <i className="fas fa-percent mr-2"></i>Ofertas
+              <FontAwesomeIcon icon={faPercent} className="mr-2" />Ofertas
             </Link>
           </li>
           <li className="nav-item">
             <Link className="nav-link" to="#">
-              <i className="fas fa-star mr-2"></i>Novedades
+              <FontAwesomeIcon icon={faStar} className="mr-2" />Novedades
             </Link>
           </li>
           <li className="nav-item">
             <Link className="nav-link" to="#">
-              <i className="fas fa-shipping-fast mr-2"></i>Mis Pedidos
+              <FontAwesomeIcon icon={faShippingFast} className="mr-2" />Mis Pedidos
             </Link>
           </li>
         </ul>
@@ -89,13 +92,13 @@ const Navbar = ({ cartItemsCount, onSearch }) => {
             />
             <div className="input-group-append">
               <button className="btn-search" type="submit">
-                <i className="fas fa-search mr-2"></i>Buscar
+                <FontAwesomeIcon icon={faSearch} className="mr-2" />Buscar
               </button>
             </div>
           </form>
           
           <Link to="/carritocompra" className="cart-btn" aria-label="Carrito de compras">
-            <i className="fas fa-shopping-cart"></i>
+            <FontAwesomeIcon icon={faShoppingCart} />
             {cartItemsCount > 0 && (
               <span className="cart-badge">{cartItemsCount}</span>
             )}
