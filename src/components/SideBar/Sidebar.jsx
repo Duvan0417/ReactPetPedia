@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import logoPetpedia from '../../assets/petpedia.png'; 
+import './SideBar.css'; // Asegúrate de tener un archivo CSS para estilos
+
 
 const Sidebar = () => {
   const location = useLocation();

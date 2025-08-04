@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import Sidebar from '../../components/SideBar/SideBar'; // Ajusta según tu estructura real
+import { productsData } from '../../data/products';
+import Sidebar from '../../components/SideBar/SideBar';
 import Navbar from '../../components/Navbar/Navbar';
-import ProductCard from '../../components/ProductCard/ProductCard';
 import PromoBanner from '../../components/PromoBanner/PromoBanner';
+import ProductCard from '../../components/ProductCard/ProductCard';
 import Footer from '../../components/Footer/Footer';
-import { productsData } from '../../data/products'; // Asegúrate que esta ruta también sea correcta
-import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import './compra.css';
 
@@ -18,7 +16,6 @@ const Compra = () => {
   const [activeCategory, setActiveCategory] = useState('all');
   const [isLoading, setIsLoading] = useState(true);
 
-  // Simular carga de datos
   useEffect(() => {
     const timer = setTimeout(() => {
       setProducts(productsData);
@@ -29,25 +26,22 @@ const Compra = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  // Filtrar productos
   useEffect(() => {
     let results = products;
-    
-    // Filtrar por búsqueda
+
     if (searchTerm) {
       results = results.filter(product => 
         product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
         product.description.toLowerCase().includes(searchTerm.toLowerCase())
       );
     }
-    
-    // Filtrar por categoría
+
     if (activeCategory !== 'all') {
       results = results.filter(product => 
         product.petCategory === activeCategory
       );
     }
-    
+
     setFilteredProducts(results);
   }, [searchTerm, activeCategory, products]);
 
@@ -77,7 +71,6 @@ const Compra = () => {
         
         <PromoBanner />
         
-        {/* Filtros de categoría */}
         <div className="category-filter">
           {categories.map(category => (
             <button
@@ -90,7 +83,6 @@ const Compra = () => {
           ))}
         </div>
         
-        {/* Sección de productos populares */}
         <h2 className="section-title">Productos Populares</h2>
         
         {isLoading ? (
@@ -115,7 +107,6 @@ const Compra = () => {
           </div>
         )}
 
-        {/* Sección de ofertas especiales */}
         <h2 className="section-title">Ofertas Especiales</h2>
         
         <div className="row">
