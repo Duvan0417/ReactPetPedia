@@ -16,7 +16,6 @@ export const SeccionMascota = () => (
       <Link to="/settings/medical-history" className="list-group-item list-group-item-action">
         <i className="fas fa-file-medical me-2"></i> Historial Médico
       </Link>
-      {/* Nuevos apartados agregados con íconos */}
       <Link to="/settings/appointments" className="list-group-item list-group-item-action">
         <i className="fas fa-calendar-check me-2"></i> Citas Veterinarias
       </Link>
