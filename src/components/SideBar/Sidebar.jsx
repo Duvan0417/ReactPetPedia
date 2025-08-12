@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import logo from '../../assets/logopet.png'; // Asegúrate de tener la imagen en esta ruta
 import './SideBar.css'; // Asegúrate de tener un archivo CSS para estilos
 
 const Sidebar = () => {
@@ -18,7 +19,7 @@ const Sidebar = () => {
   return (
     <div className="sidebar">
       <div className="sidebar-header">
-        <img src="/api/placeholder/80/80" alt="Logo de PetPedia" className="logo" />
+        <img src={logo} alt="Logo de PetPedia" className="logo" />
         <span className="logo-text">PetPedia</span>
       </div>
       <div className="sidebar-menu">

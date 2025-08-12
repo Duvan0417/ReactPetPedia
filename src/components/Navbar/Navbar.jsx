@@ -1,7 +1,23 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faThLarge, faPercent, faStar, faShippingFast, faSearch, faShoppingCart, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { 
+  faBars, 
+  faThLarge, 
+  faPercent, 
+  faStar, 
+  faTruckFast, 
+  faSearch, 
+  faShoppingCart,
+  faBowlFood,
+  faGamepad,
+  faShirt,
+  faBed,
+  faSoap,
+  faHeartPulse,
+  faCar,
+  faDumbbell
+} from '@fortawesome/free-solid-svg-icons';
 import './Navbar.css';
 
 const Navbar = ({ cartItemsCount, onSearch }) => {
@@ -9,14 +25,14 @@ const Navbar = ({ cartItemsCount, onSearch }) => {
   const [searchQuery, setSearchQuery] = useState('');
 
   const categories = [
-    { name: 'Alimentos', icon: faEnvelope },
-    { name: 'Juguetes', icon: faThLarge },
-    { name: 'Ropa y Accesorios', icon: faPercent },
-    { name: 'Camas y Muebles', icon: faStar },
-    { name: 'Higiene y Cuidado', icon: faShippingFast },
-    { name: 'Salud y Bienestar', icon: faSearch },
-    { name: 'Viajes y Transporte', icon: faShoppingCart },
-    { name: 'Entrenamiento', icon: faBars }
+    { name: 'Alimentos', icon: faBowlFood },
+    { name: 'Juguetes', icon: faGamepad },
+    { name: 'Ropa y Accesorios', icon: faShirt },
+    { name: 'Camas y Muebles', icon: faBed },
+    { name: 'Higiene y Cuidado', icon: faSoap },
+    { name: 'Salud y Bienestar', icon: faHeartPulse },
+    { name: 'Viajes y Transporte', icon: faCar },
+    { name: 'Entrenamiento', icon: faDumbbell }
   ];
 
   const handleSearch = (e) => {
@@ -25,84 +41,83 @@ const Navbar = ({ cartItemsCount, onSearch }) => {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light">
-      <button className="toggle-sidebar mr-3" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-        <FontAwesomeIcon icon={faBars} />
-      </button>
-      
-      <Link className="navbar-brand" to="/inicio">
-        <img src="/project petpedia1/imagenes/logo.png" alt="Logo de PetPedia" />
-      </Link>
-      
-      <button 
-        className="navbar-toggler" 
-        type="button" 
-        onClick={() => setIsMenuOpen(!isMenuOpen)}
-        aria-label="Toggle navigation"
-      >
-        <span className="navbar-toggler-icon"></span>
-      </button>
-      
-      <div className={`collapse navbar-collapse ${isMenuOpen ? 'show' : ''}`} id="navbarNav">
-        <ul className="navbar-nav mr-auto">
-          <li className="nav-item dropdown">
-            <button 
-              className="nav-link dropdown-toggle" 
-              id="navbarDropdown" 
-              data-toggle="dropdown" 
-              aria-haspopup="true" 
-              aria-expanded="false"
-            >
-              <FontAwesomeIcon icon={faThLarge} className="mr-2" />Categorías
-            </button>
-            <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-              {categories.map((category, index) => (
-                <Link className="dropdown-item" to="#" key={index}>
-                  <FontAwesomeIcon icon={category.icon} className="mr-2" />{category.name}
-                </Link>
-              ))}
-            </div>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="#">
-              <FontAwesomeIcon icon={faPercent} className="mr-2" />Ofertas
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="#">
-              <FontAwesomeIcon icon={faStar} className="mr-2" />Novedades
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="#">
-              <FontAwesomeIcon icon={faShippingFast} className="mr-2" />Mis Pedidos
-            </Link>
-          </li>
-        </ul>
+    <nav className="navbar">
+      <div className="navbar-container">
+        <button 
+          className="navbar-toggle" 
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Toggle menu"
+        >
+          <FontAwesomeIcon icon={faBars} className="navbar-icon" />
+        </button>
         
-        <div className="d-flex align-items-center ml-auto">
-          <form className="input-group mr-3" onSubmit={handleSearch}>
-            <input 
-              type="text" 
-              className="form-control search-input" 
-              placeholder="¿Qué estás buscando?" 
-              aria-label="Buscar productos"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-            />
-            <div className="input-group-append">
-              <button className="btn-search" type="submit">
-                <FontAwesomeIcon icon={faSearch} className="mr-2" />Buscar
+        <Link className="navbar-brand" to="/inicio">
+          <img src="/project petpedia1/imagenes/logo.png" alt="Logo de PetPedia" className="navbar-logo" />
+        </Link>
+        
+        <div className={`navbar-collapse ${isMenuOpen ? 'show' : ''}`}>
+          <ul className="navbar-nav">
+            <li className="nav-item dropdown">
+              <button 
+                className="nav-link dropdown-toggle" 
+                aria-haspopup="true" 
+                aria-expanded="false"
+              >
+                <FontAwesomeIcon icon={faThLarge} className="navbar-icon" />
+                Categorías
               </button>
-            </div>
-          </form>
+              <div className="dropdown-menu">
+                {categories.map((category, index) => (
+                  <Link className="dropdown-item" to="#" key={index}>
+                    <FontAwesomeIcon icon={category.icon} className="navbar-icon" />
+                    {category.name}
+                  </Link>
+                ))}
+              </div>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="#">
+                <FontAwesomeIcon icon={faPercent} className="navbar-icon" />
+                Ofertas
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="#">
+                <FontAwesomeIcon icon={faStar} className="navbar-icon" />
+                Novedades
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="#">
+                <FontAwesomeIcon icon={faTruckFast} className="navbar-icon" />
+                Mis Pedidos
+              </Link>
+            </li>
+          </ul>
           
-          <Link to="/carritocompra" className="cart-btn" aria-label="Carrito de compras">
-            <FontAwesomeIcon icon={faShoppingCart} />
-            {cartItemsCount > 0 && (
-              <span className="cart-badge">{cartItemsCount}</span>
-            )}
-          </Link>
+          <div className="navbar-actions">
+            <form className="navbar-search" onSubmit={handleSearch}>
+              <input 
+                type="text" 
+                className="search-input" 
+                placeholder="¿Qué estás buscando?" 
+                aria-label="Buscar productos"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+              <button className="search-button" type="submit">
+                <FontAwesomeIcon icon={faSearch} className="navbar-icon" />
+                <span className="search-text">Buscar</span>
+              </button>
+            </form>
+            
+            <Link to="/carritocompra" className="cart-button" aria-label="Carrito de compras">
+              <FontAwesomeIcon icon={faShoppingCart} className="cart-icon" />
+              {cartItemsCount > 0 && (
+                <span className="cart-badge">{cartItemsCount}</span>
+              )}
+            </Link>
+          </div>
         </div>
       </div>
     </nav>

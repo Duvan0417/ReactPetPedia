@@ -1,81 +1,219 @@
+/* Estilos generales de la barra de navegación */
 .navbar {
-  background: rgb(250, 250, 250);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  padding: 0.8rem 2rem;
-  margin-left: 80px;
-  border-radius: 0 0 15px 15px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem 2rem;
   position: sticky;
   top: 0;
-  z-index: 900;
+  z-index: 1000;
 }
 
-.navbar-brand img {
-  height: 50px;
-  transition: transform 0.3s ease;
+.navbar-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
 }
 
-.navbar-brand img:hover {
-  transform: scale(1.05);
+/* Logo */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo {
+  height: 40px;
+  width: auto;
+}
+
+/* Iconos */
+.navbar-icon {
+  margin-right: 0.5rem;
+  width: 1em;
+  height: 1em;
+  color: #4b28d6;
+}
+
+.cart-icon {
+  font-size: 1.2rem;
+  position: relative;
+}
+
+/* Menú hamburguesa */
+.navbar-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: none;
+  padding: 0.5rem;
+}
+
+/* Elementos de navegación */
+.navbar-nav {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  margin-right: 1.5rem;
+  position: relative;
+}
+
+.nav-link {
+  color: #333;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: #007bff;
+}
+
+.dropdown-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  min-width: 200px;
+  z-index: 1000;
+  display: none;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  color: #333;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.dropdown-item:hover {
+  background-color: #f8f9fa;
+}
+
+/* Buscador */
+.navbar-actions {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-search {
+  display: flex;
+  margin-right: 1.5rem;
 }
 
 .search-input {
-  border-radius: 30px;
-  padding: 10px 20px;
-  border: 1px solid #e0e0e0;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-  transition: all 0.3s ease;
-  width: 300px;
+  padding: 0.5rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px 0 0 4px;
+  width: 250px;
 }
 
-.search-input:focus {
-  box-shadow: 0 0 0 3px rgba(78, 103, 235, 0.25);
-  border-color: var(--primary-color);
-}
-
-.btn-search {
-  background: var(--primary-color);
+.search-button {
+  background-color: #007bff;
   color: white;
   border: none;
-  padding: 10px 25px;
-  border-radius: 30px;
-  margin-left: -15px;
-  transition: all 0.3s ease;
-  font-weight: 600;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  letter-spacing: 0.5px;
+  padding: 0.5rem 1rem;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s;
 }
 
-.btn-search:hover {
-  background: #3955d8;
-  transform: translateY(-2px);
+.search-button:hover {
+  background-color: #0056b3;
 }
 
-.cart-btn {
+.search-text {
+  margin-left: 0.5rem;
+}
+
+/* Carrito */
+.cart-button {
   position: relative;
-  background: transparent;
-  border: none;
-  padding: 8px;
-  transition: all 0.3s ease;
-}
-
-.cart-btn i {
-  font-size: 1.8rem;
-  color: var(--dark-color);
+  color: #333;
+  text-decoration: none;
+  padding: 0.5rem;
 }
 
 .cart-badge {
   position: absolute;
-  top: 0;
-  right: 0;
-  background: var(--accent-color);
+  top: -5px;
+  right: -5px;
+  background-color: #ff5722;
   color: white;
-  font-size: 0.7rem;
+  border-radius: 50%;
   width: 20px;
   height: 20px;
-  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 0.7rem;
   font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .navbar-container {
+    flex-wrap: wrap;
+  }
+  
+  .navbar-toggle {
+    display: block;
+  }
+  
+  .navbar-collapse {
+    width: 100%;
+    display: none;
+  }
+  
+  .navbar-collapse.show {
+    display: block;
+  }
+  
+  .navbar-nav {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .nav-item {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+  
+  .navbar-actions {
+    width: 100%;
+    margin-top: 1rem;
+    justify-content: space-between;
+  }
+  
+  .navbar-search {
+    flex-grow: 1;
+    margin-right: 1rem;
+  }
+  
+  .search-input {
+    width: 100%;
+  }
 }

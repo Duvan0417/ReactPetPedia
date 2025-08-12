@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import Sidebar from './components/SideBar/SideBar';
+import Sidebar from './components/SideBar/Sidebar';
 import Compra from './Pages/Compra/Compra';
 import Inicio from './Pages/Home/Inicio';
 import Foro from './Pages/Foro/Foro'; // Importa el componente Foro
