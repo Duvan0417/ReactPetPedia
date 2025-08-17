@@ -8,7 +8,7 @@ export const SeccionCuentas = () => (
      <Link to="/ajustes/perfil" className="list-group-item list-group-item-action">
         <i className="fas fa-user-circle me-2"></i> Perfil
       </Link>
-      <Link to="/ajustes/notificacion" className="list-group-item list-group-item-action">
+      <Link to="/ajustes/notificaciones" className="list-group-item list-group-item-action">
         <i className="fas fa-bell me-2"></i> Notificaciones
       </Link>
       <Link to="/ajustes/privacidas" className="list-group-item list-group-item-action">
