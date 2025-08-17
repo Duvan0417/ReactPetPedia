@@ -11,7 +11,7 @@ const Sidebar = () => {
     { path: '/veterinaria', icon: 'fas fa-clinic-medical', name: 'Veterinaria' },
     { path: '/adopcion', icon: 'fas fa-paw', name: 'Adopciones' },
     { path: '/foro', icon: 'fas fa-comments', name: 'Foro' },
-    { path: '/perfil', icon: 'fas fa-user', name: 'Perfil' },
+    // { path: '/perfil', icon: 'fas fa-user', name: 'Perfil' },
     { path: '/ajustes', icon: 'fas fa-cog', name: 'Configuración' }
   ];
 

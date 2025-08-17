@@ -1,4 +1,4 @@
-// src/components/ProfileSection.jsx
+// formulario de edicion de perfil 
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -32,7 +32,6 @@ const ProfileSection = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Aquí iría la lógica para guardar los datos
     console.log('Perfil guardado:', profile);
     navigate('/ajustes');
   };
