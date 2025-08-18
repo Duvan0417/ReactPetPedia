@@ -1,0 +1,240 @@
+.profile-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.profile-header {
+  margin-bottom: 2rem;
+}
+
+.profile-header h2 {
+  color: #2c3e50;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.profile-header p {
+  color: #7f8c8d;
+  font-size: 1rem;
+}
+
+.profile-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.profile-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.profile-card-header h3 {
+  color: #2c3e50;
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+.profile-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-edit, .btn-save, .btn-cancel {
+  padding: 0.7rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-edit {
+  background-color: #2848c7;
+  color: white;
+  border: none;
+}
+
+.btn-edit:hover {
+  background-color: #2848c7;
+  transform: translateY(-2px);
+}
+
+.btn-save {
+  background-color: #2848c7;
+  color: white;
+  border: none;
+}
+
+.btn-save:hover {
+  background-color: #2848c7;
+}
+
+.btn-cancel {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+}
+
+.btn-cancel:hover {
+  background-color: #c0392b;
+}
+
+.profile-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.profile-photo-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.profile-photo-container {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.profile-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo-edit-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+  cursor: pointer;
+}
+
+.photo-edit-overlay:hover {
+  opacity: 1;
+}
+
+.camera-icon {
+  color: white;
+  font-size: 1.5rem;
+}
+
+.btn-change-photo {
+  background: none;
+  border: 1px solid #3498db;
+  color: #3498db;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-change-photo:hover {
+  background: #3498db;
+  color: white;
+}
+
+.profile-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.profile-field {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.field-icon {
+  color: #3498db;
+  font-size: 1.2rem;
+  padding-top: 0.3rem;
+}
+
+.field-content {
+  flex: 1;
+}
+
+.field-content label {
+  display: block;
+  color: #7f8c8d;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.field-content p {
+  color: #2c3e50;
+  font-size: 1.1rem;
+  margin: 0;
+  padding: 0.5rem 0;
+}
+
+.field-content input,
+.field-content textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border 0.2s;
+}
+
+.field-content input:focus,
+.field-content textarea:focus {
+  border-color: #3498db;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.field-content textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+@media (max-width: 768px) {
+  .profile-container {
+    padding: 1rem;
+  }
+  
+  .profile-field {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .profile-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .btn-edit, .btn-save, .btn-cancel {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .profile-content {
+    gap: 1.5rem;
+  }
+}
