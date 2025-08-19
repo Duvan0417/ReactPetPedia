@@ -8,6 +8,8 @@ import Inicio from './Pages/Home/Inicio';
 import Configuracion from './Pages/Configuracion/Configuracion';
 import ProfileSection from './Pages/Configuracion/ConfiguracionCuentas/Components/ProfileSection';
 import NotificationsSection from './Pages/Configuracion/ConfiguracionCuentas/Components/NotificationsSection';
+import SecurityPrivacy from './Pages/Configuracion/ConfiguracionCuentas/Components/SecurityPrivacy'
+import MyPetsSections from './Pages/Configuracion/ConfiguracionMacotas/Components/MyPetsSections'
 import Foro from './Pages/Foro/Foro';
 import Veterinaria from './Pages/Veterinaria/Veterinaria';
 import './App.css';
@@ -23,7 +25,8 @@ function App() {
         <Route path="/ajustes" element={<Configuracion />} />
         <Route path="/ajustes/perfil" element={<ProfileSection />} />
         <Route path="/ajustes/notificaciones" element={<NotificationsSection />} />
-        <Route path="/ajustes/privacidad" element={<div>Privacidad</div>} />
+        <Route path="/ajustes/seguridadyprivacidad" element={<SecurityPrivacy />} />
+        <Route path="/ajustes/mascotas" element={<MyPetsSections />} />
         <Route path="/foro" element={<Foro />} />
         <Route path="/veterinaria" element={<Veterinaria />} />
         <Route path="*" element={<div>Página no encontrada</div>} />
